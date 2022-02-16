@@ -202,21 +202,6 @@ class FilterListWidget<T extends Object> extends StatelessWidget {
           ),
 
           // /// Bottom section for control buttons
-          ControlButtonBar<T>(
-            controlButtons: controlButtons,
-            allButtonText: allButtonText,
-            applyButtonText: applyButtonText,
-            resetButtonText: resetButtonText,
-            enableOnlySingleSelection: enableOnlySingleSelection,
-            onApplyButtonClick: () {
-              final selctedItems = FilterState.of<T>(context).selctedItems;
-              if (onApplyButtonClick != null) {
-                onApplyButtonClick!.call(selctedItems);
-              } else {
-                Navigator.pop(context, selctedItems);
-              }
-            },
-          )
         ],
       ),
     );
